@@ -43,6 +43,6 @@ $ $ tempclc -u -v 59F
 59°F = 15°C
 ```
 
-$ Credits
+# Credits
 
 - [Simon Schneegans](http://schneegans.github.io/) for his outstanding lightweight [parsing class](http://schneegans.github.io/tutorials/2019/08/06/commandline)
