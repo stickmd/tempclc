@@ -15,10 +15,10 @@ $ sudo make install
 
 ```
 Usage: tempclc [-uv] value<c|C|f|F>
-
 -u, --units    Show units in output
 -v, --verbose  Show output as XX = YY
 -h, --help     Print this help message and exit
+--version      Return build version and exit
 ```
 
 # Examples

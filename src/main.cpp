@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "tempclc.hpp"
+#include "version.hpp"
 using namespace std;
 
 int main(int argc, char* argv[])
@@ -9,6 +10,7 @@ int main(int argc, char* argv[])
     bool    oUnits      = false;
     bool    oVerbose    = false;
     bool    oPrintHelp  = false;
+    bool    oVersion    = false;
 
     // Declaration of all possible command line options
     tempclc args("Usage: tempclc [-uv] value<c|C|f|F>");
@@ -16,6 +18,7 @@ int main(int argc, char* argv[])
     args.addArgument({"-v", "--verbose"},   &oVerbose,  "Show output as XX = YY");
     args.addArgument({"-h", "--help"},      &oPrintHelp,
             "Print this help message and exit");
+    args.addArgument({"--version"},         &oVersion,  "Return build version and exit");
 
     // Parse command line arguments
     try
@@ -26,6 +29,13 @@ int main(int argc, char* argv[])
     {
         std::cout << e.what() << std::endl;
         return -1;
+    }
+
+    // If oPrintVersion was set to true, return build version and exit.
+    if (oVersion)
+    {
+        std::cout << "tempclc v" << VERSION << std::endl;
+        return 0;
     }
 
     // If oPrintHelp was set to true, print a help message and exit.
