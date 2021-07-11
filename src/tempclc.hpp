@@ -26,7 +26,7 @@
 // --help=false
 // --help true
 
-class CommandLine {
+class tempclc {
  public:
 
   // These are the possible variables the options may point to. Bool and
@@ -42,7 +42,7 @@ class CommandLine {
                        std::string*> Value;
 
   // The description is printed as part of the help message.
-  explicit CommandLine(std::string description);
+  explicit tempclc(std::string description);
 
   // Adds a possible option. A typical call would be like this:
   // bool printHelp = false;

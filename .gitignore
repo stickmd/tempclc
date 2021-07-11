@@ -35,3 +35,5 @@
 bin/
 build/
 tempclc
+version.sh
+.debug_time

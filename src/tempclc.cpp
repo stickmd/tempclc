@@ -1,18 +1,18 @@
-#include "CommandLine.hpp"
+#include "tempclc.hpp"
 
 #include <algorithm>
 #include <iomanip>
 
-CommandLine::CommandLine(std::string description)
+tempclc::tempclc(std::string description)
     : mDescription(std::move(description)) {
 }
 
-void CommandLine::addArgument(std::vector<std::string> const& flags,
+void tempclc::addArgument(std::vector<std::string> const& flags,
                               Value const& value, std::string const& help) {
   mArguments.emplace_back(Argument{flags, value, help});
 }
 
-void CommandLine::printHelp(std::ostream& os) const {
+void tempclc::printHelp(std::ostream& os) const {
 
   // Print the general description.
   os << mDescription << std::endl;
@@ -66,7 +66,7 @@ void CommandLine::printHelp(std::ostream& os) const {
   }
 }
 
-void CommandLine::parse(int argc, char* argv[]) const {
+void tempclc::parse(int argc, char* argv[]) const {
 
   // Skip the first argument (name of the program).
   int i = 1;
