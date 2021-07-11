@@ -8,14 +8,12 @@ int main(int argc, char* argv[])
     // Default options
     bool    oUnits      = false;
     bool    oVerbose    = false;
-    bool    oVersion    = false;
     bool    oPrintHelp  = false;
 
     // Declaration of all possible command line options
     tempclc args("Usage: tempclc [-uv] value<c|C|f|F>");
     args.addArgument({"-u", "--units"},     &oUnits,    "Show units in output");
     args.addArgument({"-v", "--verbose"},   &oVerbose,  "Show output as XX = YY");
-    args.addArgument({"--version"},         &oVersion,  "Print version and exit");
     args.addArgument({"-h", "--help"},      &oPrintHelp,
             "Print this help message and exit");
 
@@ -29,11 +27,6 @@ int main(int argc, char* argv[])
         std::cout << e.what() << std::endl;
         return -1;
     }
-
-    if (oVersion)
-    {
-        args.printVersion(VERSION);
-        return 0;
 
     // If oPrintHelp was set to true, print a help message and exit.
     if (oPrintHelp)
